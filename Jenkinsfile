@@ -1,13 +1,7 @@
 pipeline {
         agent any
         stages {
-		stage('static analysis') {
-                        steps {
-                                echo 'This is stage 1'
-                                sh 'PYTHONPATH=. pylint py_jenkins_demo/sample.py'
-                        }
-                }
-                stage('unittest') {
+		stage('unittest') {
                         steps {
                                 echo 'This is stage 2'
                                 sh 'PYTHONPATH=. python test/runner.py'
